@@ -28,9 +28,11 @@ import androidx.compose.ui.unit.dp
 import br.com.hellodev.typesafenavigation.domain.model.Product
 
 @Composable
-fun ProductListScreen() {
+fun ProductListScreen(
+    navigateToDetails: (Product) -> Unit
+) {
     ProductListContent(
-        navigateToDetails = {}
+        navigateToDetails = navigateToDetails
     )
 }
 
