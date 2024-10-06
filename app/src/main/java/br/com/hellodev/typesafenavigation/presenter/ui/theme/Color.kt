@@ -1,4 +1,4 @@
-package br.com.hellodev.typesafenavigation.ui.theme
+package br.com.hellodev.typesafenavigation.presenter.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

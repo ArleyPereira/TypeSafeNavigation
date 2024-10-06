@@ -1,4 +1,4 @@
-package br.com.hellodev.typesafenavigation.ui.theme
+package br.com.hellodev.typesafenavigation.presenter.ui.theme
 
 import android.app.Activity
 import android.os.Build
