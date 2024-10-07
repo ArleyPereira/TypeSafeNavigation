@@ -42,7 +42,7 @@ private fun ProductDetailsScreenContent(
             TopAppBar(
                 title = { Text("Details") },
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onBackPress) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 }
