@@ -1,5 +1,6 @@
-package br.com.hellodev.typesafenavigation.presenter.features.details
+package br.com.hellodev.typesafenavigation.presenter.features.cart
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,35 +17,33 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ProductDetailsScreen(
+fun CartScreen(
     id: Int,
     name: String,
-    navigateToCartScreen: () -> Unit,
     onBackPressed: () -> Unit
 ) {
-    ProductDetailsScreenContent(
+    CartContent(
         id = id,
         name = name,
-        navigateToCartScreen = navigateToCartScreen,
         onBackPressed = onBackPressed
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ProductDetailsScreenContent(
+fun CartContent(
     id: Int,
     name: String,
-    navigateToCartScreen: () -> Unit,
     onBackPressed: () -> Unit
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Details") },
+                title = { Text("Cart") },
                 navigationIcon = {
                     IconButton(onClick = onBackPressed) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -56,6 +55,7 @@ private fun ProductDetailsScreenContent(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
+                    .background(Color.White)
                     .padding(paddingValues),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -63,9 +63,9 @@ private fun ProductDetailsScreenContent(
                 Text(text = "id: $id")
                 Text(text = "name: $name")
                 Button(
-                    onClick = navigateToCartScreen,
+                    onClick = onBackPressed,
                     content = {
-                        Text("Cart Screen")
+                        Text("On Back Pressed")
                     }
                 )
             }
@@ -75,11 +75,10 @@ private fun ProductDetailsScreenContent(
 
 @Preview
 @Composable
-private fun ProductDetailsScreenPreview() {
-    ProductDetailsScreenContent(
+private fun CartPreview() {
+    CartContent(
         id = 0,
         name = "Product 0",
-        navigateToCartScreen = {},
         onBackPressed = {}
     )
 }
